@@ -32,3 +32,18 @@
 .brand-fallback{display:inline-flex;align-items:center;gap:12px}.official-logo{max-height:58px;max-width:205px;width:auto;object-fit:contain}.official-logo:not([hidden]){display:block}
 
 .runner-fallback--live{opacity:.05!important}
+
+/* FMM V05 — portrait of Fernando, premium brutalist editorial layout */
+.about-photo{position:relative;margin:0;top:32px;width:100%;max-width:535px;aspect-ratio:3/4.05;border:1px solid rgba(220,235,252,.28);background:#d8d9d7;isolation:isolate;box-shadow:24px 24px 0 rgba(169,192,220,.10)}
+.about-photo::before{content:"";position:absolute;inset:-14px auto auto -14px;width:38%;height:38%;border-top:1px solid rgba(214,233,255,.65);border-left:1px solid rgba(214,233,255,.65);z-index:1;pointer-events:none}
+.about-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:contrast(1.03) saturate(.96)}
+.about-photo figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;background:rgba(16,29,58,.95);color:var(--ivory);font-size:9px;letter-spacing:.12em;font-weight:800}
+.about-photo figcaption span:first-child{color:#aac4e5}
+@media(max-width:850px){.about-photo{top:0;width:min(100%,390px);aspect-ratio:4/4.8;box-shadow:16px 16px 0 rgba(169,192,220,.1)}.about-intro:has(.about-photo){min-height:auto;padding-bottom:30px}.about-photo img{object-position:center 31%}}
+@media(max-width:600px){.about-photo{max-width:100%;aspect-ratio:4/5}.about-intro:has(.about-photo){min-height:auto}.about-photo figcaption{font-size:8px;padding:12px 13px}}
+
+/* V05 / preserve original portrait and editorial photo sizing */
+.about-photo{aspect-ratio:760/820;max-width:535px}
+.about-photo img{object-fit:cover;object-position:center;filter:none}
+@media(max-width:850px){.about-photo{aspect-ratio:760/820;width:min(100%,470px)}}
+@media(max-width:600px){.about-photo{aspect-ratio:760/820;width:100%}}
