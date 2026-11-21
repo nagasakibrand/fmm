@@ -2,7 +2,7 @@
  * Human body: a licensed, rigged GLB (MakeHuman Sam, CC0).
  * Every luminous point is sampled on triangles of the *actual animated skin mesh*.
  * Skeleton pose is evaluated each frame; no procedural mannequin, no primitives.
- * Animation is intentionally slowed to ~6.7 seconds per run cycle.
+ * Animation is intentionally shown in dramatic slow motion: 20 seconds per run cycle.
  * Place model at /public/models/runner-sam.glb. A CC0 source URL is a backup.
  * Source: https://www.innerscene.com/tools/library/3d-parts/run-sam-3d-person-animated-fa008c06
  */
@@ -64,8 +64,11 @@ async function initializeHero(canvas, hero) {
   const action = mixer.clipAction(clip);
   action.setLoop(THREE.LoopRepeat, Infinity);
   action.play();
-  // Source cycle: 1.333 s. Rate .20 = approx. 6.7 s/cycle.
-  const motionScale = Math.max(.1,Math.min(.34,clip.duration / 6.7));
+  // Cinematic slow-motion: complete precisely one running cycle in 20 seconds.
+  // Increase RUN_CYCLE_SECONDS to make the runner even slower.
+  // No artificial minimum playback rate: small rates must remain possible.
+  const RUN_CYCLE_SECONDS = 20;
+  const motionScale = clip.duration / RUN_CYCLE_SECONDS;
 
   // Triangle-area sampling: points lie on real skin/clothing geometry, not cylinders.
   let seed = 70419;
