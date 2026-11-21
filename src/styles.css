@@ -59,3 +59,63 @@ a .arrow-svg,button .arrow-svg{pointer-events:none}
  .post-arrow{line-height:1}
  .footer-email .arrow-svg{width:14px;height:14px;min-width:14px}
 }
+
+/* V07 · Lectura de artículos sin recortes en móviles.
+   Las tablas científicas necesitan ancho propio, pero no deben ensanchar
+   la columna de lectura: solo la tabla se desplaza horizontalmente. */
+@media (max-width: 850px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+  }
+  .article-layout > *,
+  .article-prose {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .article-prose {
+    overflow-wrap: break-word;
+  }
+  .article-prose .table-wrap {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .article-prose .table-wrap table {
+    min-width: 530px;
+  }
+  .article-detail-head h1 {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .article-breadcrumb {
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 600px) {
+  .article-detail-head h1 {
+    font-size: clamp(37px, 9.5vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -.055em;
+  }
+  .article-deck {
+    max-width: 100%;
+  }
+  .article-prose h2,
+  .article-prose h3 {
+    overflow-wrap: break-word;
+  }
+  .article-prose blockquote {
+    padding: 22px 18px;
+    font-size: 19px;
+  }
+  .article-byline {
+    gap: 14px 16px;
+  }
+}
