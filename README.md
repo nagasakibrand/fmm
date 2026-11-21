@@ -1,3 +1,5 @@
+**HERO V03:** La página usa un modelo humano 3D animado real (GLB, CC0) en lugar de la figura procedural. Sigue las instrucciones de `HERO_V03_INSTRUCCIONES.md`. Es necesario subir `public/models/runner-sam.glb` para una ejecución fiable.
+
 # FMM NUTRICIÓN — V01
 
 Web de Fernando Matallanos. Estética brutalista premium, colores azul marino y blanco roto, corredor de partículas WebGL, servicios de nutrición deportiva online, artículos científicos y formulario de contacto.
@@ -164,3 +166,16 @@ provisional: true
 ## Diseño aprobado
 
 Azul marino `#101D3A`, blanco roto `#F2F0E8`, alternancia de secciones, estilo brutalista premium con tipografía editorial. Los tres artículos ocupan exactamente la primera sección después del HERO. La presentación de Fernando permanece en Inicio, sin una página separada. El único servicio es nutrición deportiva online y no se muestran precios.
+
+## V02 · HERO revisado (21/11/2026)
+
+Se ha sustituido la figura articulada básica por una nube de puntos sobre superficies anatómicas de sección variable. Incluye cabeza y rostro, tórax y cintura de distintas anchuras, pelvis, muslos y pantorrillas con cambios de volumen, manos y pies; el corredor mantiene la interacción suave con el cursor y scroll.
+
+- Ciclo anterior aproximado: 1,6 segundos. Nuevo ciclo: **6,6 segundos**, con una animación deliberadamente lenta.
+- Más partículas para definir la silueta (alrededor de 12 700 escritorio / 5100 móvil), a costa de mayor carga de CPU. Se ejecuta solo cuando el HERO está visible.
+- Movimiento de cámara reducido, menor oscilación vertical y dispersión más discreta.
+- Se mantienen WebGL nativo, fallback SVG y la opción de movimiento reducido.
+
+**Límite de fidelidad:** esta V02 sigue siendo una **escultura anatómica procedural**, no una malla corporal de escaneo 3D ni una animación de captura de movimiento real. Si la dirección de arte exige un corredor fotorrealista, el siguiente paso es sustituir el modelado procedural por una malla humana riggeada con una carrera animada por mocap y muestrear sus superficies para las partículas, conservando el estilo visual actual.
+
+Para actualizar un repositorio V01 conectado a Vercel, basta con reemplazar `src/runner.js` con el de V02. No es necesario volver a crear el repositorio ni volver a importar el proyecto en Vercel.

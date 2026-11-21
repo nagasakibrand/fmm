@@ -1,0 +1,16 @@
+FMM NUTRICIÓN / MODELO HUMANO 3D
+
+Para mostrar el HERO V03 definitivo, descarga el GLB original aquí:
+https://www.innerscene.com/tools/library/3d-parts/run-sam-3d-person-animated-fa008c06
+
+Pulsa «Download GLB» y renombra el archivo descargado como:
+runner-sam.glb
+
+Sube ese archivo a GitHub dentro de public/models/.
+El sitio lo carga desde /models/runner-sam.glb (en el dominio de Vercel).
+
+Modelo: Run — Sam 3D Person, Animated. Creado por Innerscene a partir
+ de materiales MakeHuman/MPFB. Licencia CC0 (dominio público, uso comercial).
+Duración del ciclo original: 1,333 s. La web lo reproduce 5 veces más lento.
+
+NUNCA se muestra el modelo sólido: solamente su superficie de partículas.
